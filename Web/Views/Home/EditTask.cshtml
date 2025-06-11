@@ -1,0 +1,24 @@
+@model NTierTodoApp.Models.TaskItem
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>تعديل المهمة</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h1>تعديل المهمة</h1>
+        <form asp-action="EditTask" method="post">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <div class="form-group">
+                <label for="title">عنوان المهمة</label>
+                <input type="text" name="title" class="form-control" value="@Model.Title" required />
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">حفظ</button>
+            <a href="@Url.Action("Index")" class="btn btn-secondary mt-2">إلغاء</a>
+        </form>
+    </div>
+</body>
+</html>
